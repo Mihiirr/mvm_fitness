@@ -1,0 +1,19 @@
+.header_landing {
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 25px;
+  background-color: #2e82d6;
+  box-shadow: 0px 5px 8px #888888;
+  color: #ffffff;
+}
+
+.header_landing_links {
+  display: flex;
+}
+
+.header_landing_links a {
+  text-decoration: none;
+  margin-left: 15px;
+}
