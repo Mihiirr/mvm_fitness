@@ -8,6 +8,7 @@ import ImageCardLanding from "../Components/ImageCardLanding"
 import "./landing.css"
 import useWindowPosition from '../hook/useWindowPosition';
 import Header from '../Components/header';
+import Footer from "../Components/Footer"
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -76,7 +77,6 @@ export default function Landing() {
         <div className={classes.root}>
             <CssBaseline />
             {/* Header */}
-
             <div className={classes.header_root} id="header">
                 <Header />
                 <Collapse
@@ -103,6 +103,8 @@ export default function Landing() {
                 <ImageCardLanding place={places[1]} checked={checkedcard} />
                 <ImageCardLanding place={places[0]} checked={checkedcard} />
             </div>
+
+            <Footer />
         </div>
     );
 }
