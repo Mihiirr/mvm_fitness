@@ -1,14 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import { CssBaseline } from '@material-ui/core';
-import { AppBar, IconButton, Toolbar, Collapse } from '@material-ui/core';
-import SortIcon from '@material-ui/icons/Sort';
+import { IconButton, Collapse } from '@material-ui/core';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import { Link as Scroll } from 'react-scroll';
 import ImageCardLanding from "../Components/ImageCardLanding"
-// import PlaceToVisit from './components/PlaceToVisit';
 import "./landing.css"
 import useWindowPosition from '../hook/useWindowPosition';
+import Header from '../Components/header';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -23,23 +22,6 @@ const useStyles = makeStyles((theme) => ({
         alignItems: 'center',
         height: '100vh',
         fontFamily: 'Nunito',
-    },
-    appbar: {
-        background: 'none',
-    },
-    appbarWrapper: {
-        width: '80%',
-        margin: '0 auto',
-    },
-    appbarTitle: {
-        flexGrow: '1',
-    },
-    icon: {
-        color: '#fff',
-        fontSize: '2rem',
-    },
-    colorText: {
-        color: '#5AFF3D',
     },
     container: {
         textAlign: 'center',
@@ -60,6 +42,9 @@ const useStyles = makeStyles((theme) => ({
         [theme.breakpoints.down('md')]: {
             flexDirection: 'column',
         },
+    },
+    colorText: {
+        color: '#5AFF3D',
     },
 }));
 
@@ -91,18 +76,9 @@ export default function Landing() {
         <div className={classes.root}>
             <CssBaseline />
             {/* Header */}
-            <div className={classes.header_root} id="header">
-                <AppBar className={classes.appbar} elevation={0}>
-                    <Toolbar className={classes.appbarWrapper}>
-                        <h1 className={classes.appbarTitle}>
-                            My<span className={classes.colorText}>Island.</span>
-                        </h1>
-                        <IconButton>
-                            <SortIcon className={classes.icon} />
-                        </IconButton>
-                    </Toolbar>
-                </AppBar>
 
+            <div className={classes.header_root} id="header">
+                <Header />
                 <Collapse
                     in={checked}
                     {...(checked ? { timeout: 1000 } : {})}
@@ -111,7 +87,7 @@ export default function Landing() {
                     <div className={classes.container}>
                         <h1 className={classes.title}>
                             Welcome to <br />
-                            My<span className={classes.colorText}>Island.</span>
+                            MVM_<span className={classes.colorText}>FITNESS</span>
                         </h1>
                         <Scroll to="place-to-visit" smooth={true}>
                             <IconButton>
