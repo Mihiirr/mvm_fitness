@@ -14,5 +14,9 @@ mongoose
 app.use(express.json());
 app.use(cors());
 
+app.get("/", (req, res) => {
+    res.send("Wellcome to the backend of MVM_FITNESS!!!")
+})
+
 const port = 8000
 app.listen(port, () => console.log(`Server running on ${port}`))
