@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { AppBar, Button, Toolbar } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 
@@ -31,13 +31,32 @@ const useStyles = makeStyles((theme) => ({
 
 const Header = () => {
     const classes = useStyles();
+    const [IsLoggedin, setIsLoggedin] = useState(false);
+    const token = localStorage.getItem("auth-token");
+    useEffect(() => {
+
+        const checkUser = () => {
+            if (token) {
+                setIsLoggedin(true)
+            } else {
+                setIsLoggedin(false)
+            }
+        }
+        checkUser();
+    }, [token])
+
+    const logout = () => {
+        localStorage.removeItem("auth-token");
+    }
+
     return (
         <AppBar className={classes.appbar} elevation={0}>
             <Toolbar className={classes.appbarWrapper}>
                 <h1 className={classes.appbarTitle}>
                     MVM_<span className={classes.colorText}>FITNESS</span>
                 </h1>
-                <Button variant='contained' color='success' href='/signin'>SIGN IN</Button>
+                {IsLoggedin ?
+                    <Button variant='contained' color='success' onClick={logout} href='/'>SIGN Out</Button> : <Button variant='contained' color='success' href='/signin'>SIGN IN</Button>}
             </Toolbar>
         </AppBar>
     )

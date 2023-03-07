@@ -1,13 +1,12 @@
 body {
-  font-family: 'Josefin Sans';
-  background-color:#D8E9A8;
+  font-family: "Josefin Sans";
+  background-color: #bec3b1;
 }
 
 * {
   padding: 0px;
   margin: 0px;
   box-sizing: border-box;
-
 }
 
 ::-webkit-scrollbar {
@@ -23,7 +22,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  color: #1E5128;
+  color: #1e5128;
   font-size: 25px;
   border-radius: 4px;
   position: absolute;
@@ -46,7 +45,7 @@ body {
   width: 100%;
   display: flex;
   /* flex-wrap: wrap; */
-} 
+}
 
 .detail-image {
   width: 729px;
@@ -60,15 +59,13 @@ body {
   width: 700px;
   height: 900px;
   margin-top: -350px;
-
-
 }
 
 .exercise-card {
   width: 400px;
   height: 445px;
   background: #fff;
-  border-top: 4px solid #4E9F3D;
+  border-top: 4px solid #4e9f3d;
   border-bottom-left-radius: 20px;
   text-decoration: none;
   display: flex;
@@ -95,8 +92,8 @@ body {
 }
 
 .search-btn:hover {
-  color: #FF2625 !important;
-  border: 1px solid #FF2625 !important;
+  color: #ff2625 !important;
+  border: 1px solid #ff2625 !important;
 }
 
 .exercise-video {
@@ -108,12 +105,11 @@ body {
   text-decoration: none;
 }
 
-@media screen and (max-width:1200px) {
+@media screen and (max-width: 1200px) {
   .detail-image {
     width: 300px;
     height: 300px;
   }
-
 
   .react-horizontal-scrolling-menu--scroll-container {
     width: 500px;
@@ -136,20 +132,18 @@ body {
     width: 320px;
     height: 300px;
   }
-
 }
 
-@media screen and (max-width:400px) {
+@media screen and (max-width: 400px) {
   .exercise-card {
     width: 180px;
   }
 }
 
-
 @media screen and (max-width: 800px) {
-    .login__container,
-    .signup__container,
-    .verify {
-        padding: 30px;
-    }
+  .login__container,
+  .signup__container,
+  .verify {
+    padding: 30px;
+  }
 }
