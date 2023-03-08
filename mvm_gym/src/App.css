@@ -1,6 +1,6 @@
 body {
   font-family: "Josefin Sans";
-  background-color: #bec3b1;
+  background-color: #fcfff4;
 }
 
 * {
@@ -65,8 +65,67 @@ video {
 
 /* Dashboard page Styles ------------------------------------------*/
 .dashboard {
-  margin: 80px;
-  max-width: 80%;
+  height: 80vh;
+  margin: 100px 60px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.sidebar_dashboard {
+  height: 100%;
+  width: 25%;
+  padding: 20px;
+  background-color: #cccfc4;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar_dashboard_links {
+  padding: 10px;
+  text-align: center;
+  color: #646464;
+  border-radius: 10px;
+  font-size: large;
+  font-weight: 600;
+  margin-bottom: 5px;
+  border: none;
+}
+
+.sidebar_dashboard_links:hover {
+  background-color: #4e9f3d;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.sidebar_dashboard_links_active {
+  padding: 10px;
+  text-align: center;
+  border-radius: 10px;
+  font-size: large;
+  font-weight: 600;
+  margin-bottom: 5px;
+  background-color: #4e9f3d;
+  color: #ffffff;
+  border: none;
+}
+
+.mainContent_dashboard {
+  height: 80vh;
+  width: 70%;
+  padding: 20px;
+  text-align: center;
+  background-color: #c6cfc1;
+  border-radius: 10px;
+}
+
+.dashboard_details {
+  width: 100%;
+  margin-top: 40px;
+  text-align: left;
+  font-size: larger;
 }
 
 /* Home page Styles -----------------------------------------------*/
@@ -117,11 +176,12 @@ video {
   margin-top: -350px;
 }
 
-.exercise-card {
+.exercise_card {
   width: 400px;
   height: 445px;
-  background: #fff;
+  background: #ffffff;
   border-top: 4px solid #4e9f3d;
+  box-shadow: 0 0 10px gray;
   border-bottom-left-radius: 20px;
   text-decoration: none;
   display: flex;
