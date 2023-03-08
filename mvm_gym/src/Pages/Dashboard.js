@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import Header from "../Components/Header";
 
 const Dashboard = () => {
     const navigate = useNavigate();
@@ -20,6 +21,7 @@ const Dashboard = () => {
 
     return (
         <div className='dashboard'>
+            <Header />
             <h2 style={{ marginBottom: "30px" }}>Howdy, David</h2>
             <button className='signOutBtn' onClick={handleSignOut}>
                 SIGN OUT

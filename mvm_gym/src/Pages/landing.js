@@ -5,9 +5,8 @@ import { IconButton, Collapse } from '@material-ui/core';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import { Link as Scroll } from 'react-scroll';
 import ImageCardLanding from "../Components/ImageCardLanding"
-import "./landing.css"
 import useWindowPosition from '../hook/useWindowPosition';
-import Header from '../Components/header';
+import Header from '../Components/Header';
 import Footer from "../Components/Footer"
 
 const useStyles = makeStyles((theme) => ({

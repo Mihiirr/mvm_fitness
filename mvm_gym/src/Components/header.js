@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { AppBar, Button, Toolbar } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
+import Box from '@mui/material/Box';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -9,16 +10,13 @@ const useStyles = makeStyles((theme) => ({
         backgroundRepeat: 'no-repeat',
         backgroundSize: 'cover',
     },
-
-    appbar: {
-        background: 'none',
-    },
     appbarWrapper: {
         width: '80%',
         margin: '0 auto',
     },
     appbarTitle: {
         flexGrow: '1',
+        color: "#ffffff"
     },
     icon: {
         color: '#fff',
@@ -27,7 +25,25 @@ const useStyles = makeStyles((theme) => ({
     colorText: {
         color: '#5AFF3D',
     },
+    links: {
+        color: "#ffffff"
+    }
 }))
+
+const navItems = [
+    {
+        name: "Home",
+        href: "/home"
+    },
+    {
+        name: "Exercises",
+        href: "/execises"
+    },
+    {
+        name: "Dashboard",
+        href: "/dashboard"
+    }
+];
 
 const Header = () => {
     const classes = useStyles();
@@ -50,11 +66,20 @@ const Header = () => {
     }
 
     return (
-        <AppBar className={classes.appbar} elevation={0}>
+        <AppBar className='header' color="transparent" elevation={4} >
             <Toolbar className={classes.appbarWrapper}>
                 <h1 className={classes.appbarTitle}>
                     MVM_<span className={classes.colorText}>FITNESS</span>
                 </h1>
+                {IsLoggedin && (
+                    <Box sx={{ display: { xs: 'none', sm: 'block' } }} mr={3}>
+                        {navItems.map((item) => (
+                            <Button key={item.name} className={classes.links} href={item.href}>
+                                {item.name}
+                            </Button>
+                        ))}
+                    </Box>
+                )}
                 {IsLoggedin ?
                     <Button variant='contained' color='success' onClick={logout} href='/'>SIGN Out</Button> : <Button variant='contained' color='success' href='/signin'>SIGN IN</Button>}
             </Toolbar>

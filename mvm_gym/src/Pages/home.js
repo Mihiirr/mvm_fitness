@@ -3,7 +3,7 @@ import { Box, Typography, Button } from '@mui/material';
 import HeroBanner2 from '../assets/images/gym_11.jpg';
 import SearchExercises from '../Components/SeachExercises';
 import Exercises from '../Components/Exercises';
-import Header from '../Components/header';
+import Header from '../Components/Header';
 import Footer from '../Components/Footer';
 import { useNavigate } from 'react-router-dom';
 
@@ -29,11 +29,6 @@ const Home = () => {
                 mt: { lg: '212px', xs: '70px' },
                 ml: { sm: '50px' }
             }} position="relative" p="20px">
-                {/* <Typography color="#4E9F3D"
-                    fontWeight="600" fontSize="26px" mt="-140px"
-                >
-                    Fitness Hub
-                </Typography> */}
                 <Typography fontWeight={700}
                     sx={{
                         fontSize: { lg: '44px', xs: '40px' }
