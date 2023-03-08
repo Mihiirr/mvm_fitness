@@ -5,23 +5,26 @@ import { IconButton, Collapse } from '@material-ui/core';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import { Link as Scroll } from 'react-scroll';
 import ImageCardLanding from "../Components/ImageCardLanding"
-import "./landing.css"
 import useWindowPosition from '../hook/useWindowPosition';
-import Header from '../Components/header';
+import Header from '../Components/Header';
+import Footer from "../Components/Footer"
 
 const useStyles = makeStyles((theme) => ({
     root: {
         minHeight: '100vh',
-        backgroundImage: `url(https://source.unsplash.com/1MrMsNBcsYA)`,
         backgroundRepeat: 'no-repeat',
         backgroundSize: 'cover',
+        backgroundImage: "linear-gradient(170deg, #B0A8B9, white)"
     },
     header_root: {
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
         height: '100vh',
+        width: "100%",
         fontFamily: 'Nunito',
+        position: "absolute",
+        zIndex: "1",
     },
     container: {
         textAlign: 'center',
@@ -76,26 +79,32 @@ export default function Landing() {
         <div className={classes.root}>
             <CssBaseline />
             {/* Header */}
+            <div className='container'>
+                <div className={classes.header_root} id="header">
+                    <Header />
+                    <Collapse
+                        in={checked}
+                        {...(checked ? { timeout: 1000 } : {})}
+                        collapsedHeight={50}
+                    >
+                        <div className={classes.container}>
+                            <h1 className={classes.title}>
+                                Welcome to <br />
+                                MVM_<span className={classes.colorText}>FITNESS</span>
+                            </h1>
+                            <Scroll to="place-to-visit" smooth={true}>
+                                <IconButton>
+                                    <ExpandMoreIcon className={classes.goDown} />
+                                </IconButton>
+                            </Scroll>
+                        </div>
+                    </Collapse>
+                </div>
 
-            <div className={classes.header_root} id="header">
-                <Header />
-                <Collapse
-                    in={checked}
-                    {...(checked ? { timeout: 1000 } : {})}
-                    collapsedHeight={50}
-                >
-                    <div className={classes.container}>
-                        <h1 className={classes.title}>
-                            Welcome to <br />
-                            MVM_<span className={classes.colorText}>FITNESS</span>
-                        </h1>
-                        <Scroll to="place-to-visit" smooth={true}>
-                            <IconButton>
-                                <ExpandMoreIcon className={classes.goDown} />
-                            </IconButton>
-                        </Scroll>
-                    </div>
-                </Collapse>
+                <video className='videoTag' autoPlay loop muted>
+                    <source src="videoplayback.webm" type='video/mp4' />
+                    Your browser does not support the video tag. I suggest you upgrade your browser.
+                </video>
             </div>
 
             {/* Cards */}
@@ -103,6 +112,8 @@ export default function Landing() {
                 <ImageCardLanding place={places[1]} checked={checkedcard} />
                 <ImageCardLanding place={places[0]} checked={checkedcard} />
             </div>
+
+            <Footer />
         </div>
     );
 }

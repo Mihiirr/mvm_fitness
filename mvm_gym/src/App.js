@@ -2,12 +2,13 @@ import './App.css';
 import {
   BrowserRouter as Router,
   Routes,
-  Route,
+  Route
 } from "react-router-dom";
 import Landing from './Pages/landing';
 import SignIn from './Pages/SignIn';
 import SignUp from './Pages/SignUp';
 import Home from './Pages/home';
+import Dashboard from './Pages/Dashboard';
 
 function App() {
   return (
@@ -18,7 +19,8 @@ function App() {
           <Route exact path="/signin" element={<SignIn />} />
           <Route exact path="/signup" element={<SignUp />} />
           <Route exact path="/home" element={<Home />} />
-          {/* {isAuth.token ? <Route exact path="/admin" element={<Home />} /> : <Navigate to="/" />} */}
+          <Route exact path='/dashboard' element={<Dashboard />} />
+          {/* <Route path='phone/verify' element={<PhoneVerify />} /> */}
         </Routes>
       </Router>
     </div>
@@ -26,3 +28,4 @@ function App() {
 }
 
 export default App;
+// c5c9b9

@@ -51,8 +51,7 @@ export default function SignInSide() {
                 email: data.get('email'),
                 password: data.get('password')
             }).then((res) => {
-                localStorage.setItem("auth-token", res.data);
-                navigate("/home")
+                navigate("/signin")
             }).catch((err) => alert(err));
 
         } catch (err) {
